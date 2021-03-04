@@ -61,9 +61,11 @@ fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
         NavHost(navController, startDestination = "home") {
             composable("home") {
-                HomeScreen(onCardClick = {
-                    navController.navigate("detail/${it.id}")
-                })
+                HomeScreen(
+                    onCardClick = {
+                        navController.navigate("detail/${it.id}")
+                    }
+                )
             }
             composable(
                 "detail/{puppyId}",
@@ -71,9 +73,12 @@ fun MyApp() {
             ) { backStackEntry ->
                 val puppyId = backStackEntry.arguments?.getInt("puppyId") ?: 1
                 val puppy = PetRepository.puppies[puppyId]
-                DetailScreen(puppy, onBackClick = {
-                    navController.popBackStack()
-                })
+                DetailScreen(
+                    puppy,
+                    onBackClick = {
+                        navController.popBackStack()
+                    }
+                )
             }
         }
     }

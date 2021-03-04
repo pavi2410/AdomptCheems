@@ -25,7 +25,11 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavType
-import androidx.navigation.compose.*
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navArgument
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import me.pavi2410.adomptcheems.data.PetRepository
 import me.pavi2410.adomptcheems.ui.screens.DetailScreen
 import me.pavi2410.adomptcheems.ui.screens.HomeScreen
